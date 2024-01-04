@@ -38,14 +38,14 @@ export default class HolbertonCourse {
 
   validateLength(length) {
     const parsedLength = Number(length);
-    if (isNaN(parsedLength) || typeof parsedLength !== 'number') {
+    if (Number.isNaN(parsedLength) || typeof parsedLength !== 'number') {
       throw new TypeError('Length must be a number');
     }
     return parsedLength;
   }
 
   validateStudents(students) {
-    if (!Array.isArray(students) || students.some(student => typeof student !== 'string')) {
+    if (!Array.isArray(students) || students.some((student) => typeof student !== 'string')) {
       throw new TypeError('Students must be an array of strings');
     }
     return students;
